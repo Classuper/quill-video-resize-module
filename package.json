@@ -1,5 +1,5 @@
 {
-  "name": "quill-video-resize-module",
+  "name": "@classuper/quill-video-resize-module",
   "version": "1.0.2",
   "description": "A module for Quill rich text editor to allow videos to be resized.",
   "main": "video-resize.min.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kensnyder/quill-video-resize-module.git"
+    "url": "git+https://github.com/classuper/quill-video-resize-module.git"
   },
   "keywords": [
     "quill",
@@ -21,8 +21,12 @@
     "resize",
     "sizer"
   ],
-  "author": "@lulhum",
+  "author": "@killmenot",
   "contributors": [
+  	{
+      "name": "killmenot",
+      "url": "https://github.com/killmenot"
+    },
     {
       "name": "kensnyder",
       "url": "https://github.com/kensnyder"
@@ -34,9 +38,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Y-WeCode/quill-video-resize-module/issues"
+    "url": "https://github.com/classuper/quill-video-resize-module/issues"
   },
-  "homepage": "https://github.com/Y-WeCode/quill-video-resize-module#readme",
+  "homepage": "https://classuper/quill-video-resize-module#readme",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",

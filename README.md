@@ -12,7 +12,7 @@ Lazily adaptated from [kensnyder/quill-image-resize-module](https://github.com/k
 import Quill from 'quill';
 import VideoResize from 'quill-video-resize-module';
 
-Quill.register('modules/VideoResize', VideoResize);
+Quill.register('modules/videoResize', VideoResize);
 
 const quill = new Quill(editor, {
     // ...

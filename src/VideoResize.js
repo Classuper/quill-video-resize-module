@@ -94,7 +94,7 @@ export default class VideoResize {
 
   handleClick (evt) {
     if (evt.target === this.quill.root) {
-      const videos = this.quill.root.querySelectorAll('iframe')        
+      const videos = this.quill.root.querySelectorAll('iframe')
       for (let i = 0; i <videos.length; ++i) {
         const rect = videos[i].getBoundingClientRect()
         if (evt.clientX < rect.x) {
@@ -218,71 +218,4 @@ export default class VideoResize {
       document.documentElement.style[prop] = value
     })
   }
-}
-
-if (window.Quill) {
-
-  //BEGIN allow image alignment styles
-  const VideoFormatAttributesList = [
-    'alt',
-    'height',
-    'width',
-    'style',
-  ];
-
-  var BaseVideoFormat = window.Quill.import('formats/video');
-  class VideoFormat extends BaseVideoFormat {
-    static formats(domNode) {
-      console.log("domNode");
-      console.log(domNode);
-      return VideoFormatAttributesList.reduce(function (formats, attribute) {
-        console.log(attribute);
-        if (domNode.hasAttribute(attribute)) {
-          formats[attribute] = domNode.getAttribute(attribute);
-        }
-        return formats;
-      }, {});
-    }
-    format(name, value) {
-      console.log(name);
-      if (VideoFormatAttributesList.indexOf(name) > -1) {
-        if (value) {
-          this.domNode.setAttribute(name, value);
-        } else {
-          // this.domNode.removeAttribute(name);
-        }
-      } else {
-        super.format(name, value);
-      }
-    }
-  }
-
-  window.Quill.register(VideoFormat, true);
-  //END allow image alignment styles
-
-
-  //Add support for IE 11
-  if (typeof Object.assign != 'function') {
-    Object.assign = function (target) {
-      'use strict';
-      if (target == null) {
-        throw new TypeError('Cannot convert undefined or null to object');
-      }
-
-      target = Object(target);
-      for (var index = 1; index < arguments.length; index++) {
-        var source = arguments[index];
-        if (source != null) {
-          for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-      }
-      return target;
-    };
-  }
-
-  window.Quill.register('modules/videoResize', VideoResize);
 }
