@@ -1,13 +1,25 @@
 var path = require('path');
+var CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
   entry: "./src/VideoResize.js",
+  mode: 'production',
   output: {
     path: __dirname,
     library: 'VideoResize',
     libraryTarget: 'umd',
     filename: "video-resize.min.js"
   },
+  plugins: [
+    new CircularDependencyPlugin({
+      // exclude detection of files based on a RegExp
+      exclude: /node_modules/,
+      // add errors to webpack instead of warnings
+      failOnError: true,
+      // set the current working directory for displaying module paths
+      cwd: process.cwd(),
+  	}),
+  ],
   module: {
     rules: [
       {
@@ -17,7 +29,9 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            "presets": [["es2015", { "modules": false }]],
+            "presets": [
+              ["@babel/preset-env", { "modules": false }]
+            ],
             "plugins": ["babel-plugin-transform-class-properties"]
           }
         }]
