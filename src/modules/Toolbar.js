@@ -1,19 +1,7 @@
-import Quill from "quill";
 import IconAlignLeft from 'quill/assets/icons/align-left.svg';
 import IconAlignCenter from 'quill/assets/icons/align-center.svg';
 import IconAlignRight from 'quill/assets/icons/align-right.svg';
 import { BaseModule } from './BaseModule';
-
-const Parchment = Quill.imports.parchment;
-const FloatStyle = new Parchment.Attributor.Style('float', 'float');
-const MarginStyle = new Parchment.Attributor.Style('margin', 'margin');
-const DisplayStyle = new Parchment.Attributor.Style('display', 'display');
-
-const offsetAttributor = new Parchment.Attributor.Attribute('nameClass', 'class', {
-  scope: Parchment.Scope.INLINE,
-});
-
-Quill.register(offsetAttributor);
 
 export class Toolbar extends BaseModule {
   onCreate = () => {
@@ -34,6 +22,11 @@ export class Toolbar extends BaseModule {
   onUpdate = () => {};
 
   _defineAlignments = () => {
+    const Parchment = this.quill.constructor.imports.parchment;
+    const FloatStyle = new Parchment.Attributor.Style('float', 'float');
+    const MarginStyle = new Parchment.Attributor.Style('margin', 'margin');
+    const DisplayStyle = new Parchment.Attributor.Style('display', 'display');
+
     this.alignments = [
       {
         icon: IconAlignLeft,
@@ -69,7 +62,13 @@ export class Toolbar extends BaseModule {
   };
 
   _addToolbarButtons = () => {
+    const Parchment = this.quill.constructor.imports.parchment;
+    const FloatStyle = new Parchment.Attributor.Style('float', 'float');
+    const MarginStyle = new Parchment.Attributor.Style('margin', 'margin');
+    const DisplayStyle = new Parchment.Attributor.Style('display', 'display');
+
     const buttons = [];
+
     this.alignments.forEach((alignment, idx) => {
       const button = document.createElement('span');
       buttons.push(button);

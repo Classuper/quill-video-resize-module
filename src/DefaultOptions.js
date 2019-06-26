@@ -7,7 +7,7 @@ export default {
   overlayStyles: {
     position: 'absolute',
     boxSizing: 'border-box',
-    border: '1px dashed #444'
+    border: '1px dashed #444',
   },
   handleStyles: {
     position: 'absolute',
@@ -16,7 +16,7 @@ export default {
     backgroundColor: 'white',
     border: '1px solid #777',
     boxSizing: 'border-box',
-    opacity: '0.80'
+    opacity: '0.80',
   },
   displayStyles: {
     position: 'absolute',
@@ -28,7 +28,7 @@ export default {
     border: '1px solid #777',
     boxSizing: 'border-box',
     opacity: '0.80',
-    cursor: 'default'
+    cursor: 'default',
   },
   toolbarStyles: {
     position: 'absolute',
@@ -41,7 +41,7 @@ export default {
     textAlign: 'center',
     color: '#333',
     boxSizing: 'border-box',
-    cursor: 'default'
+    cursor: 'default',
   },
   toolbarButtonStyles: {
     display: 'inline-block',
@@ -49,11 +49,11 @@ export default {
     height: '24px',
     background: 'white',
     border: '1px solid #999',
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
   },
   toolbarButtonSvgStyles: {
     fill: '#444',
     stroke: '#444',
-    strokeWidth: '2'
+    strokeWidth: '2',
   },
 };
